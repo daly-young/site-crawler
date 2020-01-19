@@ -12,3 +12,5 @@
 部署采用了 docker-compose，集成文件可参考`./docker-compose.yml`
 
 ![image](https://github.com/daly-young/site-crawler/blob/master/img.gif)
+
+<img src="https://github.com/daly-young/site-crawler/blob/master/img.gif" alt="show" />
