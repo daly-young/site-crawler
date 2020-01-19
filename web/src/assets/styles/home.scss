@@ -1,0 +1,56 @@
+#root {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+}
+// .ant-layout-header {
+//   width: 100%;
+//   .ant-menu {
+//     display: flex;
+//     li {
+//       flex: 1;
+//       text-align: center;
+//     }
+//   }
+// }
+// .ant-layout-content {
+//    overflow-y: scroll;
+// }
+.ant-tabs-content, .ant-tabs-tabpane {
+  height: 100%;
+  padding-bottom: 40px;
+  // overflow-y: scroll;
+}
+.ant-layout-footer {
+  padding: 10px 50px;
+}
+.ant-message {
+  top: 40% !important;
+}
+.ant-tabs, .card-container {
+  height: 100%;
+}
+.card-container > .ant-tabs-card > .ant-tabs-content {
+  margin-top: -16px;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+  background: #fff;
+  padding: 16px;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar {
+  border-color: #fff;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border-color: transparent;
+  background: transparent;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+  border-color: #fff;
+  background: #fff;
+}

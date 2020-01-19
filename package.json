@@ -1,0 +1,46 @@
+{
+  "name": "ac-web-crawler",
+  "version": "1.0.0",
+  "description": "ac web crawler",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://fe-gitlab.aicaitest.com/ac/ac-web-crawler.git"
+  },
+  "keywords": [
+    "web",
+    "crawler"
+  ],
+  "author": "ac activity front-end",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "app/src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

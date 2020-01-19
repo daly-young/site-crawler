@@ -1,0 +1,47 @@
+version: '3'
+services:
+    web:
+        image: nginx
+        container_name: crawler-web
+        restart: always
+        ports:
+            - 1081:81
+        volumes:
+            - ./bin/nginx.conf:/etc/nginx/conf.d/web.conf
+            - ./web/build:/app
+        command: ['nginx', '-g', 'daemon off;']
+        links:
+            - server
+
+    server:
+        image: mhart/alpine-node
+        container_name: crawler-server
+        restart: always
+        ports:
+            - 1082:82
+        volumes:
+            - ./server:/app
+        working_dir: /app
+        environment:
+            - MYSQL_SERVER=mysql
+            - MYSQL_PORT=3306
+        command: npm start
+        links:
+            - mysql
+
+    mysql:
+        image: mysql
+        container_name: crawler-mysql
+        restart: always
+        ports:
+            - 10306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: ${dbRootPass}
+            MYSQL_USER: ${dbUser}
+            MYSQL_PASSWORD: ${dbPass}
+            MYSQL_DATABASE: ${dbName}
+        volumes:
+            - ./bin/my.cnf:/etc/my.cnf
+            - ./bin:/docker-entrypoint-initdb.d/
+            - ./mysql/db:/var/lib/mysql
+        command: --default-authentication-plugin=mysql_native_password
