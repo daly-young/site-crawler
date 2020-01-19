@@ -11,4 +11,4 @@
 
 部署采用了 docker-compose，集成文件可参考`./docker-compose.yml`
 
-![image](https://user-gold-cdn.xitu.io/2020/1/19/16fbce102340ae5c?w=359&h=599&f=gif&s=535035)
+![image](https://github.com/daly-young/site-crawler/blob/master/img.gif)
